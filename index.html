@@ -1,0 +1,272 @@
+# New-hardware
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 WBC 賽事回顧與臨床骨質健康指南</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #e53e3e;
+            --bg-color: #f7fafc;
+            --text-color: #2d3748;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* 跑馬燈樣式 */
+        .marquee-container {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 0;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+            font-weight: 500;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* 頁首 */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        /* 主體佈局 */
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+
+        /* 點擊內容優化 (JS 互動) */
+        .interactive-section {
+            cursor: pointer;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .section-header {
+            background: #edf2f7;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            background: var(--white);
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .active .section-content {
+            max-height: 500px;
+            padding: 20px;
+        }
+
+        .active .icon::before {
+            content: "−";
+        }
+
+        .icon::before {
+            content: "+";
+            font-size: 1.2rem;
+        }
+
+        /* 表格美化 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--secondary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂端跑馬燈 -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            🔥 2026 WBC 最新動態：中華隊（Chinese Taipei）於 C 組展現驚人韌性！ ｜ 🦷 臨床建議：高強度運動員應加強骨質密度監測 ｜ ⚡ Agentic AI 技術導入醫療數據分析...
+        </div>
+    </div>
+
+    <header>
+        <h1>數據驅動：運動與臨床健康整合看板</h1>
+        <p>追蹤 2026 WBC 賽事成果與專業骨質健康指引</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- WBC 賽事資訊 -->
+        <div class="card">
+            <h2>2026 World Baseball Classic (Group C)</h2>
+            <p>中華隊於本次賽事中分屬 <strong>Group C</strong>，展現了卓越的技術與拼勁。</p>
+            
+            <div class="interactive-section" onclick="toggleSection(this)">
+                <div class="section-header">
+                    <span>查看小組積分榜</span>
+                    <span class="icon"></span>
+                </div>
+                <div class="section-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>隊伍</th>
+                                <th>勝</th>
+                                <th>敗</th>
+                                <th>備註</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>中華隊 (Chinese Taipei)</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><span class="badge">Group C</span></td>
+                            </tr>
+                            <tr>
+                                <td>其他對手...</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>賽事進行中</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 骨質健康指引 -->
+        <div class="card">
+            <h2>臨床骨質健康管理指南</h2>
+            <p>針對口腔外科與長期骨骼健康維護，整合最新臨床數據分析。</p>
+
+            <div class="interactive-section" onclick="toggleSection(this)">
+                <div class="section-header">
+                    <span>骨質密度監測關鍵指標 (BMD)</span>
+                    <span class="icon"></span>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>T-Score > -1.0：</strong> 正常骨骼。</li>
+                        <li><strong>-1.0 至 -2.5：</strong> 骨質缺乏（Osteopenia），建議介入生活形態調整。</li>
+                        <li><strong>< -2.5：</strong> 骨質疏鬆，應配合臨床藥物治療。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="interactive-section" onclick="toggleSection(this)">
+                <div class="section-header">
+                    <span>口腔外科術前評估注意事項</span>
+                    <span class="icon"></span>
+                </div>
+                <div class="section-content">
+                    <p>評估患者是否長期服用雙磷酸鹽類藥物（Bisphosphonates），以降低顎骨壞死風險。建議導入 AI 輔助影像診斷，提升精準度。</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Chiu Hao-neng's Commitment. Powered by Generative AI & Clinical Excellence.</p>
+    </footer>
+
+    <script>
+        function toggleSection(element) {
+            // 切換 active 類別
+            element.classList.toggle('active');
+            
+            // 可選：點擊一個時關閉其他（手風琴效果）
+            // const sections = document.querySelectorAll('.interactive-section');
+            // sections.forEach(sec => {
+            //     if(sec !== element) sec.classList.remove('active');
+            // });
+        }
+
+        // 頁面加載時的小驚喜：console log
+        window.onload = () => {
+            console.log("GitHub Page 載入完成 - 2026 數據面板");
+        };
+    </script>
+</body>
+</html>
